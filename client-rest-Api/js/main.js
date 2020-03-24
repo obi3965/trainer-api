@@ -38,3 +38,23 @@
       
    })
    .catch(error => console.log('error', error));
+
+
+
+
+
+   document.cookie = "createToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6In;max-age=" + 60*60;
+	document.cookie = "floof=1234;max-age=" + 60*60;
+	let cookies = {};
+	document.cookie.split("; ").forEach(cookie => {
+		cookies[cookie.split("=")[0]] = cookie.split("=")[1];
+	});
+	console.log(cookies);
+	fetch("http://localhost:4000/auth/token", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/x-www-form-urlencoded",
+			"Authorization": `Bearer ${cookies.createToken}`
+		},
+		body: "title=Feta&content=Feta er godt, meget feta er meget godt."
+	});
