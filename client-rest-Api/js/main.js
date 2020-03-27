@@ -57,4 +57,27 @@
 			"Authorization": `Bearer ${cookies.createToken}`
 		},
 		body: "title=Feta&content=Feta er godt, meget feta er meget godt."
-	});
+    });
+    
+
+
+    //TO GET ALL CLASSES
+   let allClasses = "http://localhost:4000/api/v1/classes";
+   fetch(allClasses)
+   .then(res => {
+    return res.json()
+ })
+ .then(data =>{
+    let classData = data.slice(0,5)
+     let classOutput = '';
+     classData.forEach(classList =>{
+         console.log(classList.className)
+         console.log(classList.classDescription)
+         console.log(classList.classDay)
+         console.log(classList.classTime)
+         console.log(classList.maxParticipants)
+     })
+     classOutput += ` 
+     `;
+    console.log(data)
+     })
