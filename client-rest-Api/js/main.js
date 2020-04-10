@@ -43,7 +43,7 @@
 
 
 
-   document.cookie = "createToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6In;max-age=" + 60*60;
+   document.cookie = "Token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6InVzZXIxIiwicGFzc3dvcmQiOiIkMmEkMTUkNUNCd3lhQ21xblVLODUxWFlYaThLLmY4RUFkanFraUQuN2h4RDkzSTRIOGdWR2NBazdhLi4iLCJ1c2VyRmlyc3ROYW1lIjpudWxsLCJ1c2VyTGFzdE5hbWUiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjAtMDMtMDhUMTk6MDY6NDIuMzgyWiIsInVwZGF0ZWRBdCI6IjIwMjAtMDMtMDhUMTk6MDY6NDIuMzgyWiJ9LCJpYXQiOjE1ODM2OTQ5NTEsImV4cCI6MTU4MzY5ODU1MX0.bP1g83FK4SIy_oZcMaLiBZ_116MnBufcXSD0LtE5dP8;max-age=" + 60*60;
 	document.cookie = "floof=1234;max-age=" + 60*60;
 	let cookies = {};
 	document.cookie.split("; ").forEach(cookie => {
@@ -54,10 +54,14 @@
 		method: "POST",
 		headers: {
 			"Content-Type": "application/x-www-form-urlencoded",
-			"Authorization": `Bearer ${cookies.createToken}`
+			"Authorization": `Bearer ${cookies.Token}`
 		},
-		body: "title=Feta&content=Feta er godt, meget feta er meget godt."
-    });
+		
+    }).then(res =>{
+        return res.json
+    }).then(data =>{
+        console.log(data)
+    })
     
 
 
@@ -81,3 +85,19 @@
      `;
     console.log(data)
      })
+
+
+
+    //  fetch("http://localhost:4000/api/v1/users", {
+	// 	method: "POST",
+	// 	headers: {
+	// 		"Content-Type": 'Content-Type: application/x-www-form-urlencoded',
+			
+	// 	},
+		
+    // }).then(res =>{
+    //     return res.json
+    // }).then(userdata =>{
+    //     console.log(userdata)
+    // })
+     
