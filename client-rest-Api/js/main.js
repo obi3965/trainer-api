@@ -101,3 +101,10 @@
     //     console.log(userdata)
     // })
      
+    fetch('http://localhost:4000/api/v1/users'+ id, {
+        method: 'GET',
+        
+      })
+      .then(res => res.json())
+      .then(data => { console.log(data) })
+      .catch(err => { console.log(err) })
