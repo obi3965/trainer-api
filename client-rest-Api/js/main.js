@@ -66,25 +66,26 @@
 
 
     //TO GET ALL CLASSES
-   let allClasses = "http://localhost:4000/api/v1/classes";
-   fetch(allClasses)
-   .then(res => {
-    return res.json()
- })
- .then(data =>{
-    let classData = data.slice(0,5)
-     let classOutput = '';
-     classData.forEach(classList =>{
-         console.log(classList.className)
-         console.log(classList.classDescription)
-         console.log(classList.classDay)
-         console.log(classList.classTime)
-         console.log(classList.maxParticipants)
-     })
-     classOutput += ` 
-     `;
-    console.log(data)
-     })
+//    let allClasses = "http://localhost:4000/api/v1/classes";
+//    fetch(allClasses)
+//    .then(res => {
+//     return res.json()
+//  })
+//  .then(data =>{
+//     let classData = data.slice(0,5)
+//      let classOutput = '';
+//      classData.forEach(classList =>{
+//          console.log(classList.className)
+//          console.log(classList.classDescription)
+//          console.log(classList.classDay)
+//          console.log(classList.classTime)
+//          console.log(classList.maxParticipants)
+//          console.log(classList.asset.url)
+//      })
+//      classOutput += ` 
+//      `;
+//     console.log(data)
+//      })
 
 
 
@@ -101,10 +102,10 @@
     //     console.log(userdata)
     // })
      
-    fetch('http://localhost:4000/api/v1/users'+ id, {
-        method: 'GET',
+    // fetch('http://localhost:4000/api/v1/users'+ id, {
+    //     method: 'GET',
         
-      })
-      .then(res => res.json())
-      .then(data => { console.log(data) })
-      .catch(err => { console.log(err) })
+    //   })
+    //   .then(res => res.json())
+    //   .then(data => { console.log(data) })
+    //   .catch(err => { console.log(err) })
