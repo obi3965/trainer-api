@@ -5,7 +5,7 @@ var router = require("./router");
 var { testConnection } = require("./config/database");
 var formidable = require("express-formidable");
 var cors = require('cors')
-var cors = require("cors");
+
 
 testConnection();
 app.use(cors());
